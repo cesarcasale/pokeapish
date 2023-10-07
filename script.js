@@ -9,7 +9,7 @@ const getPokemons = async () => {
     const res = await response.json();
     allPokemons.push(res)
 }
-//console.log(allPokemons)
+console.log(allPokemons)
 return allPokemons;
 
 };
@@ -27,24 +27,35 @@ const mapCharacters = (charactersWithMappe) => {
     id: character.id,
     foto: character.sprites.front_default,
     type: character.types[0].type.name,
+    ability: character.abilities[0].ability.name,
+    gif: character.sprites.versions["generation-v"]['black-white'].animated.front_default,
     }));
 };
 
 const drawCharacters = (mappedCharacters) => {
     main$$.innerHTML=""
-  for (const character of mappedCharacters) {
+for (const character of mappedCharacters) {
     const characterDiv$$ = document.createElement("div");
-    characterDiv$$.className = 'pokedex'
+    characterDiv$$.className = 'pokedex flip-card-front'
     characterDiv$$.innerHTML = `
         <h2 class="ache2">${character.nombre}</h2>
-        <img class = "pokeImg ${character.type}" src="${character.foto}" alt="${character.nombre}">
+        <img class = "pokeImg ${character.type}" src="${character.gif}" alt="${character.nombre}">
         <div class="idType">
         <p class = "typePoke">Type:  ${character.type}</p>
         <h3>id#${character.id}</h3>
         </div>
     `;
     main$$.appendChild(characterDiv$$);
-  }
+    /*
+    const characterDivback$$ = document.createElement("div");
+    characterDivback$$.className = 'flip-card-back'
+    characterDivback$$.innerHTML = `
+        <img class = "pokeImgback" src="${character.gif}" alt="${character.nombre}">
+        <p class = "">Ability:  ${character.ability}</p>
+    `;
+    main$$.appendChild(characterDivback$$)
+    */
+}
 };
 
 const drawpokemon = (mappedCharacters) => {
