@@ -1,0 +1,26 @@
+@font-face{
+    font-family: 'pokefont';
+    src: url(./assets/fonts/PixelifySans-VariableFont_wght.ttf)
+}
+
+footer {
+    font-family: 'Pokemon Solid', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 120px;
+    background-color: black;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 50px;
+    color:  yellow;
+    text-decoration: underline;
+}
+
+.pikaFoot {
+    width: 150px;
+}

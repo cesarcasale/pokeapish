@@ -1,0 +1,109 @@
+@font-face{
+    font-family: 'pokefont';
+    src: url(./assets/fonts/PixelifySans-VariableFont_wght.ttf)
+}
+
+.pokedex {
+    margin: 40px;
+    background-color: white;
+    background-image: url("./assets/fondoCarta.png");
+    background-size: 280px 380px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: 380px;   
+    border-radius: 15px;
+    z-index: 1;
+    box-shadow: 15px 20px;
+}
+
+.pokedex:hover {
+    animation: gelatine 1s ;
+}
+@keyframes gelatine {
+    from, to { transform: scale(1, 1); }
+    25% { transform: scale(0.9, 1.1); }
+    50% { transform: scale(1.1, 0.9); }
+    75% { transform: scale(0.95, 1.05); }
+}
+
+
+
+.ache2 {
+    font-family: 'pokefont';
+    font-size: 30px;
+    text-transform: capitalize;
+}
+
+
+.pokeImg {
+    width: 170px;
+    
+}
+
+.typePoke {
+    font-family: 'pokefont';
+    font-size: 20px;
+
+}
+
+.idType {
+    position: relative;
+    bottom: 20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+.grass {
+    background-image: url("./assets/fondo-grass.webp");
+}
+.water {
+    background-image: url("./assets/fondo-water.webp");
+}
+.fire {
+    background-image: url("./assets/fondo-fire.jpg");
+}
+.bug {
+    background-image: url("./assets/fondo-bug.png");
+}
+.normal {
+    background-image: url("./assets/fondo-normal.png");
+}
+.poison {
+    background-image: url("./assets/fondo-poison.webp");
+}
+.electric {
+    background-image: url("./assets/fondo-electric.png");
+}
+.ground {
+    background-image: url("./assets/fondo-ground.png");
+}
+.fairy {
+    background-image: url("./assets/fondo-fairy.png");
+}
+.fighting {
+    background-image: url("./assets/fondo-fight.png");
+}
+.psychic {
+    background-image: url("./assets/fondo-psychic.png");
+}
+.rock {
+    background-image: url("./assets/fondo-rock.png");
+}
+.ghost {
+    background-image: url("./assets/fondo-ghost.png");
+}
+.ice {
+    background-image: url("./assets/fondo-ice.png");
+}
+.dragon {
+    background-image: url("./assets/fondo-dragon.png");
+}
