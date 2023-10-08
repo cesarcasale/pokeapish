@@ -29,6 +29,8 @@ const mapCharacters = (charactersWithMappe) => {
     type: character.types[0].type.name,
     ability: character.abilities[0].ability.name,
     gif: character.sprites.versions["generation-v"]['black-white'].animated.front_default,
+    gifBack: character.sprites.versions["generation-v"]['black-white'].animated.back_default,
+
     }));
 };
 
@@ -36,42 +38,53 @@ const drawCharacters = (mappedCharacters) => {
     main$$.innerHTML=""
 for (const character of mappedCharacters) {
     const characterDiv$$ = document.createElement("div");
-    characterDiv$$.className = 'pokedex flip-card-front'
+    characterDiv$$.className = 'pokedex flip-card-inner'
     characterDiv$$.innerHTML = `
+        <div class = "flip-card-front">
         <h2 class="ache2">${character.nombre}</h2>
         <img class = "pokeImg ${character.type}" src="${character.gif}" alt="${character.nombre}">
         <div class="idType">
         <p class = "typePoke">Type:  ${character.type}</p>
         <h3>id#${character.id}</h3>
         </div>
+        </div>
     `;
     main$$.appendChild(characterDiv$$);
-    /*
+    
     const characterDivback$$ = document.createElement("div");
     characterDivback$$.className = 'flip-card-back'
     characterDivback$$.innerHTML = `
-        <img class = "pokeImgback" src="${character.gif}" alt="${character.nombre}">
-        <p class = "">Ability:  ${character.ability}</p>
+    <p class = "ability">Ability:  ${character.ability}</p>
+        <img class = "pokeImgback" src="${character.gifBack}" alt="${character.nombre}">
     `;
-    main$$.appendChild(characterDivback$$)
-    */
+    characterDiv$$.appendChild(characterDivback$$)
+    
 }
 };
 
 const drawpokemon = (mappedCharacters) => {
     main$$.innerHTML=""
         const characterDiv$$ = document.createElement("div");
-        characterDiv$$.className = 'pokedex'
+        characterDiv$$.className = 'pokedex flip-card-inner'
         characterDiv$$.innerHTML = `
+        <div class="flip-card-front">
             <h2 class="ache2">${mappedCharacters.name}</h2>
-            <img class = "pokeImg ${mappedCharacters.type}" src="${mappedCharacters.sprites.front_default}" alt="${mappedCharacters.name}">
+            <img class = "pokeImg ${mappedCharacters.type}" src="${mappedCharacters.sprites.versions["generation-v"]['black-white'].animated.front_default}" alt="${mappedCharacters.name}">
             <div class="idType">
             <p class = "typePoke">Type:  ${mappedCharacters.types[0].type.name}</p>
             <h3>id#${mappedCharacters.id}</h3>
             </div>
+            </div>
         `;
         main$$.appendChild(characterDiv$$);
 
+        const characterDivback$$ = document.createElement("div");
+        characterDivback$$.className = 'flip-card-back'
+        characterDivback$$.innerHTML = `
+        <p class = "ability">Ability:  ${mappedCharacters.abilities[0].ability.name}</p>
+            <img class = "pokeImgback" src="${mappedCharacters.sprites.versions["generation-v"]['black-white'].animated.back_default}" alt="">
+        `;
+        characterDiv$$.appendChild(characterDivback$$)
 }
 
 const drawInput = (mappedCharacters) => {

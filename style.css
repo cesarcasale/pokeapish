@@ -9,11 +9,23 @@ body {
 header {
   margin: 0;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 15vh;
   background-image: linear-gradient(to right, red, yellow);
+}
+
+.box1 {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.box2 {
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .pokeLogo {
@@ -68,10 +80,25 @@ main {
   background-image: linear-gradient(to right, red, yellow);
 }
 
+.flip-card {
+  background-color: transparent;
+  perspective: 1000px;
+}
+
 @font-face {
   font-family: "pokefont";
   src: url(./assets/fonts/PixelifySans-VariableFont_wght.ttf);
 }
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1.5s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
 .pokedex {
   margin: 40px;
   background-color: white;
@@ -90,7 +117,7 @@ main {
 }
 
 .pokedex:hover {
-  animation: gelatine 1s;
+  transform: rotateY(180deg);
 }
 
 @keyframes gelatine {
@@ -117,6 +144,10 @@ main {
   width: 130px;
 }
 
+.pokeImgback {
+  width: 150px;
+}
+
 .typePoke {
   font-family: "pokefont";
   font-size: 20px;
@@ -132,6 +163,35 @@ main {
 
 h3 {
   font-size: 20px;
+}
+
+.ability {
+  font-family: "pokefont";
+  font-size: 20px;
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-back {
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../assets/backside.png");
+  background-size: 280px 380px;
+  transform: rotateY(180deg);
+  justify-content: space-around;
+  align-items: center;
 }
 
 .grass {

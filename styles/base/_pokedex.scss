@@ -2,6 +2,15 @@
     font-family: 'pokefont';
     src: url(./assets/fonts/PixelifySans-VariableFont_wght.ttf)
 }
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1.5s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
 
 .pokedex {
     margin: 40px;
@@ -19,9 +28,9 @@
     z-index: 1;
     box-shadow: 15px 20px;
 }
-
-.pokedex:hover {
-    animation: gelatine 1s ;
+.pokedex:hover  {
+    transform: rotateY(180deg);
+    //animation: gelatine 1s ;
 }
 @keyframes gelatine {
     from, to { transform: scale(1, 1); }
@@ -29,27 +38,22 @@
     50% { transform: scale(1.1, 0.9); }
     75% { transform: scale(0.95, 1.05); }
 }
-
-
-
 .ache2 {
     font-family: 'pokefont';
     font-size: 30px;
     text-transform: capitalize;
 }
-
-
 .pokeImg {
     width: 130px;
-    
 }
 
+.pokeImgback{
+    width: 150px;
+}
 .typePoke {
     font-family: 'pokefont';
     font-size: 20px;
-
 }
-
 .idType {
     position: relative;
     bottom: 20px;
@@ -57,10 +61,36 @@
     width: 100%;
     justify-content: space-around;
 }
-
 h3 {
     font-size: 20px;
 }
+.ability{
+    font-family: 'pokefont';
+    font-size: 20px;
+}
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  .flip-card-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .flip-card-back {
+    display: flex;
+    flex-direction: column;
+    background-image: url('../../assets/backside.png');
+    background-size: 280px 380px;
+    transform: rotateY(180deg);
+    justify-content: space-around;
+    align-items: center;
+  }
 
 .grass {
     background-image: url("./assets/fondo-grass.webp");
@@ -107,4 +137,7 @@ h3 {
 .dragon {
     background-image: url("./assets/fondo-dragon.png");
 }
+
+
+
 

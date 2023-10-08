@@ -1,13 +1,17 @@
 
 
 
-.container {
+
+
+.container  {
     display: flex;
     height: 70vh;
     width: 100%;
+
 }
 
-main {
+
+main  {
     border: 2px solid black;
     overflow: auto;
     display: flex;
@@ -15,7 +19,9 @@ main {
     justify-content: center;
     width: 100%;
     height: 70vh;
-    background-image: linear-gradient(to right, red, yellow);
-
+    background-image: linear-gradient(to right, red, yellow)
 }
-
+.flip-card {
+    background-color: transparent;
+    perspective: 1000px;
+  }
